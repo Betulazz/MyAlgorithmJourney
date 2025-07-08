@@ -53,6 +53,5 @@ public class BasicSort {
         print(arr);
         bubbleSort(arr);
         print(arr);
-        System.out.println("Hello World");
     }
 }
