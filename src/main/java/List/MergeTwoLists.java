@@ -16,6 +16,7 @@ public class MergeTwoLists {
         ListNode cur2 = head==head1 ? head2 : head1;
         //pre代表未排序的链表节点的前一个，即已排序链表的最后一个
         ListNode pre = head;
+        //一旦遍历到一个链表的null后，只需要将这个链表连接到另一个链表就行了
         while(cur1!=null && cur2!=null){
             if(cur1.val<=cur2.val){
                 pre.next = cur1;
