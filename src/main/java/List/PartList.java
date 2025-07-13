@@ -1,6 +1,6 @@
 package List;
 
-//https://leetcode.cn/problems/partition-list/
+//分隔链表：https://leetcode.cn/problems/partition-list/
 public class PartList {
     public static class ListNode{
         int val;
