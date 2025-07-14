@@ -56,7 +56,7 @@ public class ConvertQueueAndStack {
             queue = new LinkedList<>();
         }
 
-        //有n个数，在队列尾添加新元素x后江n个数都放在新元素后
+        //有n个数，在队列尾添加新元素x后将n个数都放在新元素后
         public void push(int x) {
             int n = queue.size();
             queue.offer(x);
