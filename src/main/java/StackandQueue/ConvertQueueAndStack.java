@@ -1,9 +1,13 @@
 package StackandQueue;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
-//用栈实现队列:https://leetcode.cn/problems/implement-queue-using-stacks/
+
 public class ConvertQueueAndStack {
+
+    //用栈实现队列:https://leetcode.cn/problems/implement-queue-using-stacks/
     class MyQueue{
 
         private Stack<Integer> in;
@@ -41,6 +45,35 @@ public class ConvertQueueAndStack {
 
         public boolean empty() {
             return in.isEmpty() && out.isEmpty();
+        }
+    }
+
+    //用队列实现栈：https://leetcode.cn/problems/implement-stack-using-queues/
+    class MyStack {
+
+        private Queue<Integer> queue;
+        public MyStack() {
+            queue = new LinkedList<>();
+        }
+
+        public void push(int x) {
+            int n = queue.size();
+            queue.offer(x);
+            for(int i=0;i<n;i++){
+                queue.offer(queue.poll());
+            }
+        }
+
+        public int pop() {
+            return queue.poll();
+        }
+
+        public int top() {
+            return queue.peek();
+        }
+
+        public boolean empty() {
+            return queue.isEmpty();
         }
     }
 }
