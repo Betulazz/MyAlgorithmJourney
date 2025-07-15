@@ -8,16 +8,16 @@ import java.util.Stack;
 public class ConvertQueueAndStack {
 
     //用栈实现队列:https://leetcode.cn/problems/implement-queue-using-stacks/
-    class MyQueue{
+    class MyQueue {
 
         private Stack<Integer> in;
         private Stack<Integer> out;
 
         // 1.in必须全部到out中
         // 2.out为空时才能从in中入栈
-        public void inToOut(){
-            if(out.isEmpty()){
-                while(!in.isEmpty()){
+        public void inToOut() {
+            if (out.isEmpty()) {
+                while (!in.isEmpty()) {
                     out.push(in.pop());
                 }
             }
@@ -52,6 +52,7 @@ public class ConvertQueueAndStack {
     class MyStack {
 
         private Queue<Integer> queue;
+
         public MyStack() {
             queue = new LinkedList<>();
         }
@@ -60,7 +61,7 @@ public class ConvertQueueAndStack {
         public void push(int x) {
             int n = queue.size();
             queue.offer(x);
-            for(int i=0;i<n;i++){
+            for (int i = 0; i < n; i++) {
                 queue.offer(queue.poll());
             }
         }
