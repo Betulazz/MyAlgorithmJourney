@@ -1,4 +1,4 @@
-package InsertBubbleSelect;
+package Sort;
 
 public class BasicSort {
 
