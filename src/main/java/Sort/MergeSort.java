@@ -1,7 +1,8 @@
 package Sort;
 
 public class MergeSort {
-    public static int MAXN = 5;
+
+    public static int MAXN = 50000;
     public static int[] help = new int[MAXN];
 
     //归并排序递归版：
@@ -17,6 +18,23 @@ public class MergeSort {
         sort(arr, l, m);
         sort(arr, m + 1, r);
         merge(arr, l, m, r);
+    }
+
+    //非递归：
+    public static void mergeSort2(int[] arr) {
+        int n = arr.length;
+        for (int l, m, r, step = 1; step < n; step *= 2) {
+            l = 0;
+            while (l < n) {
+                m = l + step - 1;
+                if (m + 1 >= n) {
+                    break;
+                }
+                r = Math.min(l + step * 2 - 1, n - 1);
+                merge(arr, l, m, r);
+                l = r + 1;
+            }
+        }
     }
 
     public static void merge(int[] arr, int l, int m, int r) {
@@ -42,6 +60,14 @@ public class MergeSort {
         mergeSort1(arr);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+
+
+        int[] nums = new int[]{5, 4, 3, 2, 1};
+        mergeSort2(nums);
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
         }
     }
 }
