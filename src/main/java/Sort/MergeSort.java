@@ -5,7 +5,11 @@ public class MergeSort {
     public static int MAXN = 50000;
     public static int[] help = new int[MAXN];
 
-    //归并排序递归版：
+    // 归并排序递归版：
+    // T(n) = 2 * T(n/2) + O(n)
+    // a = 2, b = 2, c = 1
+    // 根据master公式，时间复杂度O(n * logn)
+    // 空间复杂度O(n)
     public static void mergeSort1(int[] arr) {
         sort(arr, 0, arr.length - 1);
     }
@@ -20,7 +24,9 @@ public class MergeSort {
         merge(arr, l, m, r);
     }
 
-    //非递归：
+    // 非递归：
+    // 时间复杂度O(n * logn)
+    // 空间复杂度O(n)
     public static void mergeSort2(int[] arr) {
         int n = arr.length;
         for (int l, m, r, step = 1; step < n; step *= 2) {
@@ -70,4 +76,5 @@ public class MergeSort {
             System.out.print(nums[i] + " ");
         }
     }
+
 }
