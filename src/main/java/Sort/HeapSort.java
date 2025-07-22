@@ -34,21 +34,39 @@ public class HeapSort {
 
     public static void heapSort1(int[] arr) {
         int n = arr.length;
-        for (int i = 0; i < n; i++){
-            heapInsert(arr,i);
+        for (int i = 0; i < n; i++) {
+            heapInsert(arr, i);
         }
         int size = n;
-        while(size > 1){
-            swap(arr,0,--size);
-            heapify(arr,0,size);
+        while (size > 1) {
+            swap(arr, 0, --size);
+            heapify(arr, 0, size);
+        }
+    }
+
+    public static void heapSort2(int[] arr) {
+        int n = arr.length;
+        for (int i = n - 1; i >= 0; i--) {
+            heapify(arr, i, n);
+        }
+        int size = n;
+        while (size > 1) {
+            swap(arr, 0, --size);
+            heapify(arr, 0, size);
         }
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{5,4,3,2,1};
+        int[] arr = new int[]{5, 4, 3, 2, 1};
         heapSort1(arr);
-        for(int i =0;i<arr.length;i++){
-            System.out.print(arr[i]+" ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        int[] nums = new int[]{5, 4, 3, 2, 1};
+        heapSort2(nums);
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
         }
     }
 }
