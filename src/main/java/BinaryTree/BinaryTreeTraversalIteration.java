@@ -1,6 +1,5 @@
 package BinaryTree;
 
-import com.sun.source.tree.Tree;
 
 import java.util.Stack;
 
@@ -96,7 +95,7 @@ public class BinaryTreeTraversalIteration {
                 }
                 //没有左右子树或者左右子树都已经处理完
                 else {
-                    System.out.print(cur.val+" ");
+                    System.out.print(cur.val + " ");
                     h = stack.pop();
                 }
             }
